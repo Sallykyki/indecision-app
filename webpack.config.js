@@ -1,6 +1,5 @@
-//entry -> output
-
 const path = require("path");
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: "./src/app.js",
@@ -26,5 +25,13 @@ module.exports = {
     host: "0.0.0.0",
     disableHostCheck: true,
     contentBase: path.join(__dirname, "public")
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      filename: "index.html",
+      template: "src/index.html",
+      inject: true,
+      minify: true
+    })
+  ]
 };
