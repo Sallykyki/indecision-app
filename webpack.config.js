@@ -1,8 +1,8 @@
 const path = require("path");
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+var HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: "./src/app.js",
+  entry: "./src/index.js",
   output: {
     path: path.join(__dirname, "public"),
     filename: "bundle.js"
@@ -11,7 +11,7 @@ module.exports = {
     rules: [
       {
         loader: "babel-loader",
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/
       },
       {
