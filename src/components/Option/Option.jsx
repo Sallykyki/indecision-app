@@ -1,16 +1,5 @@
 import React from "react";
 
-// class Option extends React.Component {
-//   render() {
-//     return (
-//       <div>
-//         <p>{this.props.optionText}</p>
-//       </div>
-//     );
-//   }
-// }
-
-//stateless functional component
 const Option = props => (
   <div className="option">
     <p className="option__text">
@@ -21,7 +10,6 @@ const Option = props => (
       onClick={e => {
         props.handleDeleteOption(props.optionText);
       }}
-      // onClick={props.handleDeleteOption}
     >
       Remove
     </button>

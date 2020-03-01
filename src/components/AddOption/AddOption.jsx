@@ -7,8 +7,8 @@ export default class AddOption extends React.Component {
     this.state = { error: undefined };
   }
   handleAddOption(e) {
-    e.preventDefault(); //prevents the default form submission process - avoid fullpage refresh
-    const option = e.target.elements.option.value.trim(); //trim to erase spaces
+    e.preventDefault();
+    const option = e.target.elements.option.value.trim();
     const error = this.props.handleAddOption(option);
     this.setState(() => ({ error }));
 
@@ -30,14 +30,3 @@ export default class AddOption extends React.Component {
     );
   }
 }
-
-//stateless functional component
-
-// const User = props => {
-//   return (
-//     <div>
-//       <p>Name: {props.name}</p>
-//       <p>Age: {props.age}</p>
-//     </div>
-//   );
-// };
