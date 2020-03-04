@@ -5,15 +5,22 @@ import Action from "./components/Action";
 import Options from "./components/Options";
 import OptionModal from "./components/OptionModal";
 
-export default class App extends React.Component {
-  state = {
+interface IProps {}
+
+interface IState {
+  options: string[];
+  selectedOption: string;
+}
+
+export default class App extends React.Component<IProps, IState> {
+  state: IState = {
     options: [],
     selectedOption: undefined
   };
   handleDeleteOptions = () => {
     this.setState(() => ({ options: [] }));
   };
-  handleDeleteOption = optionToRemove => {
+  handleDeleteOption = (optionToRemove: string) => {
     this.setState(prevState => ({
       options: prevState.options.filter(option => {
         return optionToRemove !== option;
@@ -28,7 +35,7 @@ export default class App extends React.Component {
     const option = this.state.options[randomNum];
     this.setState(() => ({ selectedOption: option }));
   };
-  handleAddOption = option => {
+  handleAddOption = (option: string) => {
     if (!option) {
       return "Enter a valid option.";
     } else if (this.state.options.indexOf(option) > -1) {
@@ -46,11 +53,9 @@ export default class App extends React.Component {
       if (options) {
         this.setState(() => ({ options }));
       }
-    } catch (error) {
-      //do nothing
-    }
+    } catch (error) {}
   }
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps: IProps, prevState: IState) {
     if (prevState.options.length !== this.state.options.length) {
       const json = JSON.stringify(this.state.options);
       localStorage.setItem("options", json);
@@ -58,7 +63,7 @@ export default class App extends React.Component {
   }
 
   render() {
-    const subtitle = "Put your life in the hands of a computer";
+    const subtitle: string = "Put your life in the hands of a computer";
     return (
       <div>
         <Header subtitle={subtitle} />

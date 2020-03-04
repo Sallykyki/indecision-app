@@ -13,11 +13,14 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@types/react-modal": "^3.10.5",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-modal": "^2.4.1"
   },
   "devDependencies": {
+    "@types/react": "^16.9.23",
+    "@types/react-dom": "^16.9.5",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
@@ -30,7 +33,10 @@
     "node-sass": "^4.13.1",
     "normalize.css": "^7.0.0",
     "sass-loader": "^6.0.7",
+    "source-map-loader": "0.2.4",
     "style-loader": "^0.18.2",
+    "ts-loader": "6.2.1",
+    "typescript": "3.8.3",
     "validator": "^8.2.0",
     "watch": "^1.0.2",
     "webpack": "4.41.6",

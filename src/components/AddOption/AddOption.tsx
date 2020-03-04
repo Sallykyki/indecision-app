@@ -1,19 +1,31 @@
 import React from "react";
 
-export default class AddOption extends React.Component {
-  constructor(props) {
+interface IProps {
+  handleAddOption: (option: string) => string;
+}
+
+interface IState {
+  error: string;
+}
+
+export default class AddOption extends React.Component<IProps, IState> {
+  constructor(props: IProps) {
     super(props);
     this.handleAddOption = this.handleAddOption.bind(this);
     this.state = { error: undefined };
   }
-  handleAddOption(e) {
+  handleAddOption(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const option = e.target.elements.option.value.trim();
+    console.log(e.currentTarget.getElementsByTagName("input")[0]);
+    const option = e.currentTarget
+      .getElementsByTagName("input")[0]
+      .value.trim();
+
     const error = this.props.handleAddOption(option);
     this.setState(() => ({ error }));
 
     if (!error) {
-      e.target.elements.option.value = "";
+      e.currentTarget.getElementsByTagName("input")[0].value = "";
     }
   }
   render() {
