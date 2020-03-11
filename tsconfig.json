@@ -7,12 +7,11 @@
     "target": "es6",
     "jsx": "react",
     "types": ["react"],
-    "typeRoots": ["../node_modules/@types", "../@types"],
+    "typeRoots": ["node_modules/@types", "@types"],
     "module": "esNext",
     "moduleResolution": "node",
     "allowJs": false,
     "declaration": false,
-    "baseUrl": "./src",
-    "lib": ["ES6"]
+    "baseUrl": "./src"
   }
 }

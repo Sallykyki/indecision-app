@@ -1,4 +1,6 @@
 import React from "react";
+import { Wrapper, OptionText } from "./Option.styles";
+import Button from "../Button";
 
 interface IProps {
   count: number;
@@ -11,18 +13,18 @@ const Option: React.FunctionComponent<IProps> = ({
   optionText,
   handleDeleteOption
 }) => (
-  <div className="option">
-    <p className="option__text">
+  <Wrapper>
+    <OptionText isWidgetMessage={false}>
       {count}. {optionText}
-    </p>
-    <button
-      className="button button--link"
+    </OptionText>
+    <Button
+      link={true}
       onClick={e => {
         handleDeleteOption(optionText);
       }}
     >
       Remove
-    </button>
-  </div>
+    </Button>
+  </Wrapper>
 );
 export default Option;

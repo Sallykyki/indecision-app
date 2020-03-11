@@ -14,16 +14,21 @@
   "license": "MIT",
   "dependencies": {
     "@types/react-modal": "^3.10.5",
+    "@types/styled-components": "^5.0.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
-    "react-modal": "^2.4.1"
+    "react-modal": "^2.4.1",
+    "styled-components": "5.0.1",
+    "styled-react-modal": "^2.0.0"
   },
   "devDependencies": {
     "@types/react": "^16.9.23",
     "@types/react-dom": "^16.9.5",
+    "@types/styled-react-modal": "^1.2.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
+    "babel-plugin-styled-components": "^1.10.7",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",

@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../Button";
 
 interface IProps {
   handlePick: () => void;
@@ -10,9 +11,9 @@ const Action: React.FunctionComponent<IProps> = ({
   hasOptions
 }) => (
   <div>
-    <button className="big-button" onClick={handlePick} disabled={!hasOptions}>
+    <Button big={true} onClick={handlePick} disabled={!hasOptions}>
       What should I do now?
-    </button>
+    </Button>
   </div>
 );
 export default Action;

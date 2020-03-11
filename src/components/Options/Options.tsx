@@ -1,6 +1,9 @@
 import React, { FunctionComponent } from "react";
 import Option from "../Option/Option";
 
+import { OptionsContainer, WidgetTitle, WidgetHeader } from "./Options.styles";
+import Paragraph from "../Paragraph";
+import Button from "../Button";
 interface IProps {
   options: string[];
   handleDeleteOptions: () => void;
@@ -12,15 +15,17 @@ const Options: FunctionComponent<IProps> = ({
   handleDeleteOption,
   handleDeleteOptions
 }) => (
-  <div>
-    <div className="widget-header">
-      <h3 className="widget-header__title">Your Options</h3>
-      <button className="button button--link" onClick={handleDeleteOptions}>
+  <OptionsContainer>
+    <WidgetHeader>
+      <WidgetTitle>Your Options</WidgetTitle>
+      <Button link={true} onClick={handleDeleteOptions}>
         Remove all
-      </button>
-    </div>
+      </Button>
+    </WidgetHeader>
     {options.length === 0 && (
-      <p className="widget__message">Please addd an option to start!</p>
+      <Paragraph isWidgetMessage={true}>
+        Please addd an option to start!
+      </Paragraph>
     )}
     {options.map((option, index) => (
       <Option
@@ -30,6 +35,6 @@ const Options: FunctionComponent<IProps> = ({
         handleDeleteOption={handleDeleteOption}
       />
     ))}
-  </div>
+  </OptionsContainer>
 );
 export default Options;

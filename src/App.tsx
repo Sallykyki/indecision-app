@@ -4,6 +4,10 @@ import Header from "./components/Header";
 import Action from "./components/Action";
 import Options from "./components/Options";
 import OptionModal from "./components/OptionModal";
+import Container from "./components/Container";
+
+import Theme from "./styles/theme";
+import GlobalStyle from "./styles/base";
 
 interface IProps {}
 
@@ -65,28 +69,26 @@ export default class App extends React.Component<IProps, IState> {
   render() {
     const subtitle: string = "Put your life in the hands of a computer";
     return (
-      <div>
+      <Theme>
+        <GlobalStyle />
         <Header subtitle={subtitle} />
-        <div className="container">
+        <Container>
           <Action
             hasOptions={this.state.options.length > 0}
             handlePick={this.handlePick}
           />
-          <div className="widget">
-            <Options
-              options={this.state.options}
-              handleDeleteOptions={this.handleDeleteOptions}
-              handleDeleteOption={this.handleDeleteOption}
-            />
-            <AddOption handleAddOption={this.handleAddOption} />
-          </div>
-        </div>
-
+          <Options
+            options={this.state.options}
+            handleDeleteOptions={this.handleDeleteOptions}
+            handleDeleteOption={this.handleDeleteOption}
+          />
+          <AddOption handleAddOption={this.handleAddOption} />
+        </Container>
         <OptionModal
           selectedOption={this.state.selectedOption}
           handleClearSelectedOption={this.handleClearSelectedOption}
         />
-      </div>
+      </Theme>
     );
   }
 }
