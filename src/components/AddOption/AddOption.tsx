@@ -1,11 +1,8 @@
 import React from "react";
-import {
-  AddOptionForm,
-  AddOptionInput,
-  AddOptionError
-} from "./AddOption.styles";
+import { AddOptionForm, AddOptionInput } from "./AddOption.styles";
 
 import Button from "../Button";
+import { Paragraph } from "../Text";
 
 interface IProps {
   handleAddOption: (option: string) => string;
@@ -39,12 +36,10 @@ export default class AddOption extends React.Component<IProps, IState> {
     return (
       <React.Fragment>
         {this.state.error && (
-          <AddOptionError className="add-option-error">
-            {this.state.error}
-          </AddOptionError>
+          <Paragraph isError={true}>{this.state.error}</Paragraph>
         )}
         <AddOptionForm onSubmit={this.handleAddOption}>
-          <AddOptionInput type="text" name="option" />
+          <AddOptionInput type="text" name="option" placeholder="Add a todo" />
           <Button>Add option</Button>
         </AddOptionForm>
       </React.Fragment>

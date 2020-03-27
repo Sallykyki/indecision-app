@@ -1,5 +1,6 @@
 import React from "react";
-import { HeaderContainer, HeaderTitle, HeaderSubtitle } from "./Header.styles";
+import { HeaderContainer } from "./Header.styles";
+import { Heading1, Heading2 } from "../Text";
 import Container from "../Container";
 
 interface IProps {
@@ -9,8 +10,8 @@ interface IProps {
 const Header: React.FunctionComponent<IProps> = ({ title, subtitle }) => (
   <HeaderContainer>
     <Container>
-      <HeaderTitle>{title}</HeaderTitle>
-      {subtitle && <HeaderSubtitle>{subtitle}</HeaderSubtitle>}
+      <Heading1>{title}</Heading1>
+      {subtitle && <Heading2>{subtitle}</Heading2>}
     </Container>
   </HeaderContainer>
 );

@@ -1,5 +1,5 @@
 import styled, { DefaultTheme } from "styled-components";
-import Paragraph from "../Paragraph";
+import { Paragraph } from "../Text";
 
 import Modal, { ModalProps } from "styled-react-modal";
 

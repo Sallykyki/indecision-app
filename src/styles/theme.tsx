@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from "react";
 import { ThemeProvider, DefaultTheme } from "styled-components";
+import GlobalStyle from "./base";
 
 const theme: DefaultTheme = {
   colors: {
@@ -21,7 +22,10 @@ const theme: DefaultTheme = {
 };
 
 const Theme: FunctionComponent = ({ children }) => (
-  <ThemeProvider theme={theme}>{children}</ThemeProvider>
+  <ThemeProvider theme={theme}>
+    <GlobalStyle />
+    {children}
+  </ThemeProvider>
 );
 
 export default Theme;

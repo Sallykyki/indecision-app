@@ -11,7 +11,3 @@ export const WidgetHeader = styled.div`
   display: flex;
   justify-content: space-between;
 `;
-
-export const WidgetTitle = styled.h3`
-  margin: 0;
-`;

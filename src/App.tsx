@@ -7,7 +7,6 @@ import OptionModal from "./components/OptionModal";
 import Container from "./components/Container";
 
 import Theme from "./styles/theme";
-import GlobalStyle from "./styles/base";
 
 interface IProps {}
 
@@ -70,7 +69,6 @@ export default class App extends React.Component<IProps, IState> {
     const subtitle: string = "Put your life in the hands of a computer";
     return (
       <Theme>
-        <GlobalStyle />
         <Header subtitle={subtitle} />
         <Container>
           <Action

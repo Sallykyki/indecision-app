@@ -1,6 +1,7 @@
 import React from "react";
-import { Wrapper, OptionText } from "./Option.styles";
+import { Wrapper } from "./Option.styles";
 import Button from "../Button";
+import { Paragraph } from "../Text";
 
 interface IProps {
   count: number;
@@ -14,9 +15,9 @@ const Option: React.FunctionComponent<IProps> = ({
   handleDeleteOption
 }) => (
   <Wrapper>
-    <OptionText isWidgetMessage={false}>
+    <Paragraph isOptionText={true}>
       {count}. {optionText}
-    </OptionText>
+    </Paragraph>
     <Button
       link={true}
       onClick={e => {

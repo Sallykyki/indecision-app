@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Paragraph from "../Paragraph";
 
 export const AddOptionForm = styled.form`
   display: flex;
@@ -24,11 +23,4 @@ export const AddOptionInput = styled.input`
   @media (min-width: ${props => props.theme.spacing.desktopBreakpoint}) {
     margin: 0 ${props => props.theme.spacing.small} 0 0;
   }
-`;
-
-export const AddOptionError = styled(Paragraph)`
-  color: ${props => props.theme.colors.offWhite};
-  font-style: italic;
-  margin: ${props => props.theme.spacing.medium} 0 0 0;
-  padding: 0 ${props => props.theme.spacing.medium};
 `;

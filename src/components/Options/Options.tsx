@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from "react";
 import Option from "../Option/Option";
 
-import { OptionsContainer, WidgetTitle, WidgetHeader } from "./Options.styles";
-import Paragraph from "../Paragraph";
+import { OptionsContainer, WidgetHeader } from "./Options.styles";
+import { Paragraph, Heading3 } from "../Text";
 import Button from "../Button";
 interface IProps {
   options: string[];
@@ -17,7 +17,7 @@ const Options: FunctionComponent<IProps> = ({
 }) => (
   <OptionsContainer>
     <WidgetHeader>
-      <WidgetTitle>Your Options</WidgetTitle>
+      <Heading3>Your Options</Heading3>
       <Button link={true} onClick={handleDeleteOptions}>
         Remove all
       </Button>
